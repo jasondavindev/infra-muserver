@@ -1,6 +1,6 @@
 provider "aws" {
   version = "~>2.8"
-  region = "sa-east-1"
+  region = var.region
 }
 
 data "aws_region" "current" {}

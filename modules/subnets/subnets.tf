@@ -22,9 +22,21 @@ resource "aws_subnet" "public-subnet" {
   vpc_id                  = var.vpc_id
   cidr_block              = "10.0.0.0/24"
   map_public_ip_on_launch = true
+  availability_zone       = "${var.region}a"
 
   tags = {
     Name = "main-public-subnet"
+  }
+}
+
+resource "aws_subnet" "private-subnet" {
+  vpc_id                  = var.vpc_id
+  cidr_block              = "10.0.1.0/24"
+  map_public_ip_on_launch = true
+  availability_zone       = "${var.region}c"
+
+  tags = {
+    Name = "main-private-subnet"
   }
 }
 

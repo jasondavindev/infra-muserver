@@ -10,6 +10,15 @@ variable "default_tags" {
   }
 }
 
-variable "vpc_id" {
+variable "rds_username" {
   type = string
+}
+
+variable "rds_password" {
+  type = string
+}
+
+variable "region" {
+  type = string
+  default = "sa-east-1"
 }
